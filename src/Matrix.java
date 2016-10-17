@@ -26,14 +26,45 @@ public class Matrix{
 		return (Integer[])neighbours.toArray(new Integer[neighbours.size()]);
 	}
 	
+	public static int[][] methodName(int[][] matrix){
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				if(i % 2 == 1){
+					matrix[i][j] *= -1;
+				}
+				if(j % 2 == 1){
+					matrix[i][j] *= -1;
+				}
+			}
+		}
+		return matrix;
+	}
+	
 	public static void main(String[] args){
-		Matrix matrix = new Matrix(new int[][]{
-			{1, 2, 3}, 
-			{4, 5}, 
-			{6, 7, 8, 9}, 
-			{10, 11, 12}
+//		Matrix matrix = new Matrix(new int[][]{
+//			{1, 2, 3}, 
+//			{4, 5}, 
+//			{6, 7, 8, 9}, 
+//			{10, 11, 12}
+//		});
+//		System.out.println(Arrays.toString(matrix.getNeighbours(2, 3)));
+		
+		int[][] wow = methodName(new int[][]{
+			{1, 1, 1, 1, 1, 1, 1}, 
+			{1, 1, 1}, 
+			{1}, 
+			{1, 1, 1, 1, 1, 1}, 
+			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, 
+			{1, 1, 1, 1, 1, 1, 1, 1, 1},
+			{1, 1, 1, 1, 1, 1, 1}, 
+			{1, 1, 1}, 
+			{1}, 
+			{1, 1, 1, 1, 1, 1}, 
+			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, 
+			{1, 1, 1, 1, 1, 1, 1, 1, 1}
 		});
-		String result = Arrays.toString(matrix.getNeighbours(2, 3));
-		System.out.println(result);
+		for (int i = 0; i < wow.length; i++) {
+			System.out.println(Arrays.toString(wow[i]));
+		}
 	}
 }
